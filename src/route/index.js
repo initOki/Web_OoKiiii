@@ -1,7 +1,4 @@
-import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-import history from './history';
 
 ////////// defalut //////////
 import DefaultLayout from '../layout/DefaultLayout';
@@ -38,18 +35,16 @@ import ReactNativeMain from '../components/study/react-native';
 const IndexRouter = () => {
     return (
         <BrowserRouter>
-            {/* <DefaultLayout> */}
-            <Routes>
-                <Route exact path="/" element={<Index />} />
-                <Route path="/intro" element={<Introduce />} />
-                {/* <Route exact path="/" element={Login} /> */}
-                <Route path="/portfolio" element={<Portfolio />} />
-                <Route path="/util" element={<Animation />} />
-                <Route path="/qna" element={<QnA />} />
-            </Routes>
-            {/* </DefaultLayout> */}
-
-            {/*<Footer />*/}
+            <DefaultLayout>
+                <Routes>
+                    <Route path="/" element={<Index />} />
+                    <Route path="/intro" element={<Introduce />} />
+                    {/* <Route exact path="/" element={Login} /> */}
+                    <Route path="/portfolio" element={<Portfolio />} />
+                    <Route path="/util" element={<Animation />} />
+                    <Route path="/qna" element={<QnA />} />
+                </Routes>
+            </DefaultLayout>
 
             <SubLayout>
                 <Routes>

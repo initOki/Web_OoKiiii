@@ -4,9 +4,6 @@ import styled from '@emotion/styled';
 import { useStoreNavigation } from '../../store';
 
 const Header = () => {
-    // state
-    const navigationType = useStoreNavigation(state => state.isType);
-
     // action
     const setNavigationType = useStoreNavigation(state => state.setNavigation);
 

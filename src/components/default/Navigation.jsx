@@ -5,7 +5,7 @@ import { styled } from '@stitches/react';
 import NavigationData from '../../json/SubNavList.json';
 import { useStoreNavigation } from '../../store';
 
-const Navigation = props => {
+const Navigation = () => {
     const [list, setList] = useState();
 
     // state
@@ -33,24 +33,30 @@ const Navigation = props => {
     }, [navigationType]);
 
     return (
-        <NavigationWrapper>
-            <NavigationBox>
-                <ul>
-                    {list === 'unset' ? (
-                        <NavigationUnset>OoKiiii</NavigationUnset>
-                    ) : (
-                        list?.map((data, index) => {
-                            return (
-                                <NavigationList key={index}>
-                                    <Link to={data.path}>{data.title}</Link>
-                                </NavigationList>
-                            );
-                        })
-                    )}
-                </ul>
-                <NavigationImg src={FixBackground} alt="네비게이션 이미지" />
-            </NavigationBox>
-        </NavigationWrapper>
+        <>
+            {list === 'unset' ? (
+                ''
+            ) : (
+                <NavigationWrapper>
+                    <NavigationBox>
+                        <ul>
+                            {list === 'unset' ? (
+                                <NavigationUnset>OoKiiii</NavigationUnset>
+                            ) : (
+                                list?.map((data, index) => {
+                                    return (
+                                        <NavigationList key={index}>
+                                            <Link to={data.path}>{data.title}</Link>
+                                        </NavigationList>
+                                    );
+                                })
+                            )}
+                        </ul>
+                        <NavigationImg src={FixBackground} alt="네비게이션 이미지" />
+                    </NavigationBox>
+                </NavigationWrapper>
+            )}
+        </>
     );
 };
 
