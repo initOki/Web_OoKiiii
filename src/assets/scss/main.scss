@@ -1,0 +1,91 @@
+.wrap {
+  @include flex(center, center, 3);
+  height: 100vh;
+  .main {
+    @include flex(center, center, 1);
+    h3 {
+      font-size: 3rem;
+    }
+    .link-box {
+      @include flex(center, center, 1);
+      margin: 5rem 0;
+      ul {
+        //margin: 2rem 0;
+        padding: 2rem 0;
+        li {
+          width: 20rem;
+          text-align: center;
+          cursor: pointer;
+          a {
+            font-size: 2.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.introduce-box {
+  @include flex(center, center, 3);
+  width: 100rem;
+  padding-top: 10rem;
+  .introduce {
+    @include flex(center, flex-start, 3);
+    padding: 5rem;
+    .introduce-text {
+      text-align: center;
+      color: #000000;
+      font-size: 2rem;
+      ul {
+        li {
+          padding: 1rem;
+          font-size: 2rem;
+          font-weight: bold;
+          text-align: left;
+          span {
+            font-size: 2.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.animation-wrap {
+  margin: 10rem 0;
+  .animation-list-box {
+    li {
+      padding: 3rem 0;
+      //border-bottom: .2rem solid #949494;
+    }
+  }
+}
+
+.portfolio {
+  @include flex(center, center, 3);
+  margin: 10rem 0;
+  .portfolio-box {
+    width: 100rem;
+    margin: 3rem 0;
+    border-top: .2rem solid #000000;
+    border-bottom: .2rem solid #000000;
+    .portfolio-box-inner {
+      margin: 0 3rem;
+      padding: 3rem 0;
+      .portfolio-img {
+        width: 50rem;
+      }
+      .portfolio-text {
+        margin: 1rem 0;
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.background-img {
+  position: fixed;
+  left: -1rem;
+  bottom: -1rem;
+  width: 50rem;
+}

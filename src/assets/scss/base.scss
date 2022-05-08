@@ -1,0 +1,97 @@
+// Main color : #2d3354
+
+$main-color: #4775bf;
+
+@font-face {
+  font-family:Noto;
+  src:url(../font/NotoSansCJKkr-Regular.eot),
+  url(../font/NotoSansCJKkr-Regular.woff)
+}
+
+html,
+body {
+  background: $main-color;
+  min-height: 100vh;
+}
+
+#root {
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  //font-family: Noto;
+  font-size: 10px;
+  color: #ffffff;
+  list-style: none;
+  text-decoration: none;
+}
+
+.main {
+  font-size: 2.4rem;
+}
+
+// scroll-bar //
+
+@media all and (-ms-high-contrast:active), all and (-ms-high-contrast:none) {
+  *::-webkit-scrollbar {
+    position: absolute;
+    width: .5em;
+  }
+
+  *::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px #efebef;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #cccccc;
+    outline: .1rem solid slategrey;
+    border-radius: 1rem;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  *::-webkit-scrollbar {
+    width: .3em;
+  }
+
+  //*::-webkit-scrollbar-track {
+  //  box-shadow: inset 0 0 6px #efebef;
+  //}
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #4775bf;
+    //outline: .1rem solid slategrey;
+    border-radius: 1rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  html,
+  body {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html,
+  body {
+    font-size: 9px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  html,
+  body {
+    font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  html,
+  body {
+    font-size: 7px;
+  }
+}

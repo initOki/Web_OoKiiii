@@ -1,0 +1,37 @@
+.navigation-wrap {
+  position: fixed;
+  top: 0;
+  width: 30rem;
+  height: 100vh;
+  background: #4775bf;
+  border-right: .1rem solid #ffffff;
+  z-index: 999999;
+  .navigation-box {
+    padding: 10rem 3rem;
+    ul {
+      li {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 2rem 0;
+        font-size: 1.6rem;
+        cursor: pointer;
+        #icon-arrow-right {
+          background: #4775bf;
+          margin-right: 2rem;
+        }
+        &:hover {
+          #icon-arrow-right {
+            fill: #ffffff;
+          }
+        }
+      }
+    }
+  }
+  .img-navigation {
+    position: fixed;
+    left: -2rem;
+    bottom: -2rem;
+    width: 30rem;
+  }
+}
