@@ -37,11 +37,11 @@ const Header = () => {
                                 React
                             </Link>
                         </HeaderListContent>
-                        <HeaderListContent>
+                        {/* <HeaderListContent>
                             <Link to="/vue" onClick={() => setNavigationType('vue')}>
                                 Vue
                             </Link>
-                        </HeaderListContent>
+                        </HeaderListContent> */}
                     </HeaderListBox>
                 </HeaderContainer>
             </HeaderWrapper>

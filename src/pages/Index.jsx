@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
+import { useStoreNavigation } from 'store';
 
 const Main = () => {
+    // action
+    const setNavigationType = useStoreNavigation(state => state.setNavigation);
+
     return (
         <MainWrapper>
             <MainContainer>
@@ -10,25 +14,33 @@ const Main = () => {
                 <MainLinkBox>
                     <MainLinkList>
                         <MainLinkListContent>
-                            <Link to="/html">HTML</Link>
+                            <Link to="/html" onClick={() => setNavigationType('html')}>
+                                HTML
+                            </Link>
                         </MainLinkListContent>
                         <MainLinkListContent>
-                            <Link to="/css">CSS</Link>
+                            <Link to="/css" onClick={() => setNavigationType('css')}>
+                                CSS
+                            </Link>
                         </MainLinkListContent>
                         <MainLinkListContent>
-                            <Link to="/javascript">Javascript</Link>
+                            <Link to="/javascript" onClick={() => setNavigationType('javascript')}>
+                                Javascript
+                            </Link>
                         </MainLinkListContent>
                     </MainLinkList>
                     <MainLinkList>
                         <MainLinkListContent>
-                            <Link to="/react">React.js</Link>
+                            <Link to="/react" onClick={() => setNavigationType('react')}>
+                                React.js
+                            </Link>
+                        </MainLinkListContent>
+                        {/* <MainLinkListContent>
+                            <Link to="/vue" onClick={() => setNavigationType('')}>Vue.js</Link>
                         </MainLinkListContent>
                         <MainLinkListContent>
-                            <Link to="/vue">Vue.js</Link>
-                        </MainLinkListContent>
-                        <MainLinkListContent>
-                            <Link to="/react-native">React-Native</Link>
-                        </MainLinkListContent>
+                            <Link to="/react-native" onClick={() => setNavigationType('')}>React-Native</Link>
+                        </MainLinkListContent> */}
                     </MainLinkList>
                 </MainLinkBox>
 
