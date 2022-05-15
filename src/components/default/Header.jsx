@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from '@emotion/styled';
-import { useStoreNavigation } from '../../store';
+import { useStoreNavigation, useStoreAuth } from '../../store';
 
 const Header = () => {
     // action
     const setNavigationType = useStoreNavigation(state => state.setNavigation);
+
+    // state
+    const getLoginStatus = useStoreAuth(state => state.isLogin);
 
     return (
         <React.Fragment>
@@ -37,11 +40,15 @@ const Header = () => {
                                 React
                             </Link>
                         </HeaderListContent>
-                        {/* <HeaderListContent>
-                            <Link to="/vue" onClick={() => setNavigationType('vue')}>
-                                Vue
-                            </Link>
-                        </HeaderListContent> */}
+                        {getLoginStatus ? (
+                            <HeaderListContent>
+                                <Link to="/vue" onClick={() => setNavigationType('vue')}>
+                                    Vue
+                                </Link>
+                            </HeaderListContent>
+                        ) : (
+                            ''
+                        )}
                     </HeaderListBox>
                 </HeaderContainer>
             </HeaderWrapper>

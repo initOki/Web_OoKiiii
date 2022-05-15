@@ -14,18 +14,15 @@ const Html1 = () => {
                 <DescriptionTitle>HTML구조 어떻게...</DescriptionTitle>
 
                 <DescriptionExplain>
-                    간혹가다가 나에게 연락해서 뭐가 안된다.. 된다.. 왜 되는거냐.. 이렇게 이야기 하면서 질문하는 사람들이 좀 있다..
-                    <br />
-                    그래서 코드를 달라고 해서 보거나 뭐 개발자 메뉴로 보면 대부분 구조 문제다..
-                    <br />
-                    구조만 잘짜면 css코드가 수십줄이 줄어드는 마법을 볼 수 있다.
-                    <br />
-                    그만큼 유지보수도 쉬워지고..
-                    <br />
-                    언제까지 absolute 이런거로 끼워맞출 생각인가..
+                    개인적인 생각으로 퍼블리싱 작업은 HTML구조가 80% 이상 차지한다고 생각한다.
+                    <br />그 이유로 구조만 잘 짠다면 훨씬 적은 수의 css코드와 깔끔하기 읽기 쉬운 코드가 작성 되며 유지보수 또한 훨씬 더 효과적으로 진행이 되기 때문이다.
                 </DescriptionExplain>
 
-                <DescriptionExplain>말도 안되는 거지만 진짜 가끔가다가 이런 사람이 있다.</DescriptionExplain>
+                <DescriptionExplain>
+                    간단한 예로 아래의 두 코드를 볼 수 있다.
+                    <br />
+                    해당 코드의 목적은 헤더에 이미지와 메뉴를 넣는 것인데 이미지가 왼쪽, 네비게이션을 우측에 배치하고 싶은 것이다.
+                </DescriptionExplain>
 
                 <DescriptionCodeWrapper>
                     <DescriptionCodeBox>
@@ -52,19 +49,7 @@ const Html1 = () => {
                     </DescriptionCodeBox>
                 </DescriptionCodeWrapper>
 
-                <DescriptionExplain>
-                    다 생략하고 정말 간단히 작성한 코드이다.
-                    <br />
-                    헤더에 메뉴 리스트와 이미지가 있는데 이지미를 왼쪽에 두고 메뉴를 오른쪽에 두고 싶은데 어떻게 해야하냐.
-                    <br />
-                    코드는 이렇게 생겼다. 하면서 저런식의 코드를 주는 사람도 있다.
-                </DescriptionExplain>
-
-                <DescriptionExplain>HTML이라는 것에 대해 그냥 생긴 것만 본 것 같다.</DescriptionExplain>
-
-                <DescriptionExplain>각 태그는 display속성을 가지고 있다. 이 속성에 따라서 오른쪽으로 태그가 생성될지 아래로 태그가 생성될지가 정해진다.</DescriptionExplain>
-
-                <DescriptionExplain>위에 나온대로 이미지가 왼쪽 메뉴가 오른쪽이고 싶다면 아래와 같이 쓰고 css를 이용해서 display 속성을 수정해주면 된다.</DescriptionExplain>
+                <br />
 
                 <DescriptionCodeWrapper>
                     <DescriptionCodeBox>
@@ -92,9 +77,32 @@ const Html1 = () => {
                 </DescriptionCodeWrapper>
 
                 <DescriptionExplain>
-                    결론 태그는 display 속성에 따라서 왼쪽에서 오른쪽으로 위에서 아래로 생성된다.
+                    첫 번째로 작성된 코드와 두 번째로 작성된 코드를 비교해 봤을 때 차이점이 보이는가?
                     <br />
-                    이외에 구조를 어떻게 해야하냐. 어떻게 묶는게 좋으냐. 이런거는 경험이라고 생각된다.
+                    목적을 생각했을 때 첫 번째 배치는 좋지 않다.
+                    <br />
+                    사실 어떻게 배치를 해도 css를 사용하면 원하는 곳에 둘 수가 있다. 하지만 위에서 이야기 한 것 처럼 유지보수와 코드 가독성 등을 생각해 보면 첫 번째의 방법 보다는 두 번째의 방법이 훨씬
+                    더 좋다.
+                </DescriptionExplain>
+
+                <DescriptionExplain>
+                    첫 번째 코드의 경우 목적에 맞게 배치를 하려면 강제로 좌측 우측 position을 정해서 배치를 해주어야 한다.
+                    <br />
+                    그에 반해 두 번째 코드는 display 속성만 변경하면 바로 좌우로 배치 될 것이다.
+                </DescriptionExplain>
+
+                <DescriptionExplain>
+                    그 이유는 간단하다.
+                    <br />
+                    HTML 태그에는 각 display라는 속성이 존재한다. 이 속성에 따라서 아래에 적히는 태그들이 어디로 배치 될지가 정해진다.
+                    <br />
+                    기본적으로 HTML 코드는 위에서 아래로 읽어 내려가며 화면에 그려질때도 동일하다.
+                    <br />
+                    display 속성에 따라서 우측으로 태그가 그려질지 아래로 그려질지가 정해지는 것 이다.
+                </DescriptionExplain>
+
+                <DescriptionExplain>
+                    이외에 구조를 어떻게 해야할까. 어떻게 묶는게 좋을까. 이런거는 경험이라고 생각된다.
                     <br />
                     많이 만들어보자.
                 </DescriptionExplain>
