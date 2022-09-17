@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Header from '../components/default/Header';
 import Navigation from '../components/default/Navigation';
-import { styled } from '@stitches/react';
 
-const SubLayout = ({ children }) => {
+interface SubLayoutProps {
+    children: React.ReactNode;
+}
+
+const SubLayout = ({ children }: SubLayoutProps) => {
     return (
         <React.Fragment>
             <Header />
