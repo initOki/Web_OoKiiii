@@ -1,11 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styled from '@emotion/styled';
-import { useStoreNavigation, useStoreAuth } from 'store';
+
+// store
+import { useStore } from '../store';
+import { navigationState } from '../store/navigation.d';
+
+// style
+import { MainWrapper, MainText, MainContainer, MainLinkBox, MainLinkList, MainLinkListContent, MainExplain } from './style/IndexStyles';
 
 const Main = () => {
-    // action
-    const setNavigationType = useStoreNavigation(state => state.setNavigation);
+    const { navigation } = useStore();
+
+    const handleNavigation = (payload: navigationState['isType']) => {
+        navigation.setNavigation?.(payload);
+    };
 
     return (
         <MainWrapper>
@@ -14,24 +22,24 @@ const Main = () => {
                 <MainLinkBox>
                     <MainLinkList>
                         <MainLinkListContent>
-                            <Link to="/html" onClick={() => setNavigationType('html')}>
+                            <Link to="/html" onClick={() => handleNavigation('html')}>
                                 HTML
                             </Link>
                         </MainLinkListContent>
                         <MainLinkListContent>
-                            <Link to="/css" onClick={() => setNavigationType('css')}>
+                            <Link to="/css" onClick={() => handleNavigation('css')}>
                                 CSS
                             </Link>
                         </MainLinkListContent>
                         <MainLinkListContent>
-                            <Link to="/javascript" onClick={() => setNavigationType('javascript')}>
+                            <Link to="/javascript" onClick={() => handleNavigation('javascript')}>
                                 Javascript
                             </Link>
                         </MainLinkListContent>
                     </MainLinkList>
                     <MainLinkList>
                         <MainLinkListContent>
-                            <Link to="/react" onClick={() => setNavigationType('react')}>
+                            <Link to="/react" onClick={() => handleNavigation('react')}>
                                 React.js
                             </Link>
                         </MainLinkListContent>
@@ -53,49 +61,5 @@ const Main = () => {
         </MainWrapper>
     );
 };
-
-const MainWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-`;
-
-const MainText = styled.h3`
-    font-size: 3rem;
-`;
-
-const MainContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-`;
-
-const MainLinkBox = styled.div`
-    margin: 5rem 0;
-`;
-
-const MainLinkList = styled.ul`
-    display: flex;
-    padding: 2rem 0;
-`;
-
-const MainLinkListContent = styled.li`
-    width: 20rem;
-    text-align: center;
-    cursor: pointer;
-    a {
-        font-size: 2.4rem;
-    }
-`;
-
-const MainExplain = styled.span`
-    display: block;
-    margin: 2rem 0;
-    text-align: center;
-    font-size: 2rem;
-    line-height: 3rem;
-`;
 
 export default Main;
