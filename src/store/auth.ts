@@ -1,20 +1,19 @@
-import create from 'zustand';
-import { persist } from 'zustand/middleware';
+import create, { StateCreator } from 'zustand';
+import { persist, PersistOptions } from 'zustand/middleware';
+import { authState } from './auth.d';
 import axios from 'axios';
 
-type authState = {
-    isLogin: boolean;
-    setLogin: (request: string) => void;
-    setLogout: () => void;
-};
+type MyPersist = (
+    config: StateCreator<authState>,
+    options: PersistOptions<authState>,
+) => StateCreator<authState>;
 
-const useStoreAuth = create<authState>()(
-    persist(
+export const useStoreAuth = create<authState>(
+    (persist as unknown as MyPersist)(
         set => ({
             isLogin: false,
             setLogin: async request => {
                 const response = await axios.get('https://api.github.com/users/' + request);
-                console.log();
                 response.data.id === 61795897
                     ? set(() => ({
                           isLogin: true,
@@ -31,9 +30,7 @@ const useStoreAuth = create<authState>()(
         {
             name: 'status',
             getStorage: () => sessionStorage,
-            partialize: state => ({ status: state.isLogin }),
+            // partialize: state => ({ status: state.isLogin }),
         },
     ),
 );
-
-export { useStoreAuth };
