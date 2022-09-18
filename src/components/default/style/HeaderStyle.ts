@@ -31,8 +31,13 @@ export const HeaderListContent = styled('li', {
     padding: '0 1rem',
     borderLeft: '0.1rem solid #ffffff',
     borderRight: '0.1rem solid #ffffff',
-    a: {
+    cursor: 'pointer',
+
+    'a, button': {
         fontSize: '2rem',
+        background: 'unset',
+        border: 'unset',
+        cursor: 'pointer',
     },
     '&:last-child': {
         marginRight: '5rem',
