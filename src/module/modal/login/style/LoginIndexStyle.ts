@@ -1,6 +1,7 @@
 import { styled } from '@stitches/react';
 
 export const LoginWrapper = styled('div', {
+    position: 'relative',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -41,4 +42,15 @@ export const Button = styled('button', {
         backgroundColor: '#c4c4c4',
         pointerEvents: 'none',
     },
+});
+
+export const Close = styled('button', {
+    position: 'absolute',
+    top: '20px',
+    right: '20px',
+    fontSize: '30px',
+    color: '#000000',
+    border: 'unset',
+    backgroundColor: 'unset',
+    cursor: 'pointer',
 });
