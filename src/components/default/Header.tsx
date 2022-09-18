@@ -8,7 +8,7 @@ import { useStore } from '../../store';
 import { HeaderWrapper, HeaderContainer, HeaderListBox, HeaderListContent } from './style/HeaderStyle';
 
 const Header = () => {
-    const { auth, navigation } = useStore();
+    const { auth, navigation, common } = useStore();
 
     return (
         <React.Fragment>
@@ -49,6 +49,9 @@ const Header = () => {
                         ) : (
                             ''
                         )}
+                        <HeaderListContent>
+                            <button onClick={() => common.setModalControl?.('login')}>로그인</button>
+                        </HeaderListContent>
                     </HeaderListBox>
                 </HeaderContainer>
             </HeaderWrapper>
